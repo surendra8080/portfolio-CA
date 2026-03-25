@@ -11,7 +11,7 @@ const certificates = [
     description: "Completed GenAI-powered data analytics simulation covering advanced analytics techniques and AI-driven insights.",
     link: "https://www.theforage.com/achievements",
     icon: "https://img.icons8.com/color/48/tata-group.png",
-    image: "/img/GenAI Powered Data analytics job simulation.jpeg",
+    image: "/image/GenAI Powered Data analytics job simulation.jpeg",
   },
   {
     name: "Cloud Computing NPTEL Certification",
@@ -20,7 +20,7 @@ const certificates = [
     description: "NPTEL certification covering cloud architecture, virtualization, distributed computing, and modern cloud service deployment.",
     link: "https://internalapp.nptel.ac.in/B2C/exam_form/candidate_login/candidate_scores.php?courseid=noc25-cs107",
     icon: "https://img.icons8.com/color/48/cloud.png",
-    image: "/img/cloud computing NPTL certification NPTL.jpeg",
+    image: "/image/cloud computing NPTL certification NPTL.jpeg",
   },
   {
     name: "Oracle Cloud Infrastructure 2025 Certified Data Science Professional",
@@ -29,7 +29,7 @@ const certificates = [
     description: "Skilled in designing, training, and deploying ML models on Oracle Cloud for real-world business solutions.",
     link: "https://catalog-education.oracle.com/apex/f?p=1010:26:116554173776615",
     icon: "https://img.icons8.com/color/48/000000/oracle-logo.png",
-    image: "/img/oracel cloud infrastructire 2025 certified data science profession.jpeg",
+    image: "/image/oracel cloud infrastructire 2025 certified data science profession.jpeg",
   },
   {
     name: "Postman API Student Expert",
@@ -38,7 +38,7 @@ const certificates = [
     description: "Validated API fundamentals across requests, testing, collections, and collaborative workflows for modern developer teams.",
     link: "https://www.postman.com/sravanth6115",
     icon: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
-    image: "/img/postman api student expert.jpeg",
+    image: "/image/postman api student expert.jpeg",
   },
   {
     name: "English Grammar Pro (A1–C1)",
@@ -47,7 +47,7 @@ const certificates = [
     description: "Comprehensive English grammar certification from beginner to advanced level covering all aspects of grammar mastery.",
     link: "https://www.udemy.com/certificate/UC-7c91b605-fc62-4f5e-89b0-ae50638860f5/",
     icon: "https://img.icons8.com/color/48/udemy.png",
-    image: "/img/english grammar pro.jpeg",
+    image: "/image/english grammar pro.jpeg",
   },
   {
     name: "Java Programming Certification",
@@ -55,7 +55,7 @@ const certificates = [
     year: "2025",
     description: "Completed an intensive 72-hour Java programming course, gaining strong knowledge in object-oriented concepts, problem-solving, and application development.",
     icon: "https://img.icons8.com/color/48/java-coffee-cup-logo.png",
-    image: "/img/java programing certificate.png",
+    image: "/image/java programing certificate.png",
   },
   {
     name: "Data Structures & Algorithms",
@@ -63,7 +63,7 @@ const certificates = [
     year: "2025",
     description: "Successfully completed a 72-hour course on DSA, focusing on efficient problem-solving techniques using arrays, linked lists, stacks, queues, and algorithms.",
     icon: "https://img.icons8.com/color/48/source-code.png",
-    image: "/img/data structures & algorithm.png",
+    image: "/image/data structures & algorithm.png",
   },
   // 2024
   {
@@ -72,7 +72,7 @@ const certificates = [
     year: "2024",
     description: "Completed the AI Skills Passport program, gaining foundational knowledge in artificial intelligence, business applications, and emerging technologies.",
     icon: "https://img.icons8.com/color/48/artificial-intelligence.png",
-    image: "/img/AI skills passport EY & microsoft.jpeg",
+    image: "/image/AI skills passport EY & microsoft.jpeg",
   },
   {
     name: "Object-Oriented Programming",
@@ -80,7 +80,7 @@ const certificates = [
     year: "2024",
     description: "Completed a 72-hour course in OOP, focusing on classes, inheritance, polymorphism, and encapsulation. Built a strong base for writing clean, modular code.",
     icon: "https://img.icons8.com/color/48/object.png",
-    image: "/img/object-oriented programming.png",
+    image: "/image/object-oriented programming.png",
   },
   // 2023
   {
@@ -89,7 +89,7 @@ const certificates = [
     year: "2023",
     description: "Earned the Responsive Web Design Certification, covering HTML, CSS, Flexbox, and responsive layouts. Built multiple projects representing 300+ hours of practical work.",
     icon: "https://img.icons8.com/color/48/html-5.png",
-    image: "/img/responsive web design.jpeg",
+    image: "/image/responsive web design.jpeg",
   },
 ];
 
