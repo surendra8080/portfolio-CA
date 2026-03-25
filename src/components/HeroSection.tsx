@@ -1,10 +1,35 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail, Phone, Download } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const PROFILE_IMG = "https://drive.google.com/thumbnail?id=1YDzx6oV6A4M2rQdFADRCe1yHrMEmxsRN&sz=w800";
 const CV_URL = "https://drive.google.com/uc?export=download&id=1DDlYUs3BNLoQMUVMos0yk73jJVqVryWV";
 
 const marqueeItems = ["Python", "Data Science", "Machine Learning", "AI", "React", "Node.js", "SQL", "Power BI", "Cloud Computing", "Analytics"];
+
+const TypedText = ({ text, className = "" }: { text: string; className?: string }) => {
+  const [displayedText, setDisplayedText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentIndex < text.length) {
+      const timer = setTimeout(() => {
+        setDisplayedText((prev) => prev + text[currentIndex]);
+        setCurrentIndex((prev) => prev + 1);
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [currentIndex, text]);
+
+  return (
+    <span className={className}>
+      {displayedText}
+      {currentIndex < text.length && (
+        <span className="animate-blink text-primary">|</span>
+      )}
+    </span>
+  );
+};
 
 const HeroSection = () => {
   return (
@@ -14,8 +39,8 @@ const HeroSection = () => {
         backgroundSize: "60px 60px",
       }} />
 
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/5 blur-[120px] animate-pulse-glow" />
-      <div className="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full bg-primary/8 blur-[100px] animate-pulse-glow" style={{ animationDelay: "1s" }} />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/8 blur-[120px] animate-pulse-glow" />
+      <div className="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full bg-accent/6 blur-[100px] animate-pulse-glow" style={{ animationDelay: "1s" }} />
 
       <div className="container mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
@@ -24,71 +49,92 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-primary font-mono text-sm mb-4"
+              className="text-primary font-mono text-base md:text-lg mb-6 font-bold tracking-wider"
             >
-              Welcome to my portfolio
+              ✨ Welcome to my portfolio
             </motion.p>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4"
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="mb-4"
             >
-              Sai Sravanth{" "}
-              <span className="gradient-text">Pentela</span>
-            </motion.h1>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2 h-20 md:h-24 lg:h-32 flex items-center">
+                <TypedText 
+                  text="Sai Sravanth" 
+                  className="text-foreground"
+                />
+              </h1>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 3.5 }}
+              >
+                <span className="text-4xl md:text-6xl lg:text-7xl font-bold gradient-text">
+                  Pentela
+                </span>
+              </motion.div>
+            </motion.div>
 
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="text-xl md:text-2xl text-muted-foreground mb-6"
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="text-2xl md:text-4xl text-muted-foreground mb-8 font-bold"
             >
               B.Tech CSE Student &{" "}
-              <span className="text-primary">Aspiring Data Scientist</span>
+              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent font-black">
+                Aspiring Data Scientist
+              </span>
             </motion.h2>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="text-muted-foreground max-w-lg mx-auto lg:mx-0 mb-8"
+              transition={{ duration: 0.6, delay: 1 }}
+              className="text-lg md:text-xl text-muted-foreground max-w-lg mx-auto lg:mx-0 mb-10 leading-relaxed font-medium"
             >
-              Passionate about building intelligent solutions using Machine Learning, Data Analytics, and Full-Stack Development.
+              Passionate about building intelligent solutions using Machine Learning, Data Analytics, and Full-Stack Development. Let's create something amazing together.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.7 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
               className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8"
             >
-              <a
+              <motion.a
                 href="#contact"
-                className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-all hover:shadow-lg hover:shadow-primary/20"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:shadow-lg hover:shadow-primary/40 transition-all duration-300"
               >
                 Get in Touch
-              </a>
-              <a
+              </motion.a>
+              <motion.a
                 href="#projects"
-                className="px-6 py-3 rounded-lg border border-border text-foreground font-medium hover:border-primary hover:text-primary transition-all"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 rounded-lg border-2 border-primary text-primary font-semibold hover:bg-primary/10 transition-all duration-300"
               >
                 View Projects
-              </a>
-              <a
+              </motion.a>
+              <motion.a
                 href={CV_URL}
-                className="flex items-center gap-2 px-6 py-3 rounded-lg border border-primary/30 text-primary font-medium hover:bg-primary/10 transition-all"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center gap-2 px-8 py-3 rounded-lg border-2 border-accent text-accent font-semibold hover:bg-accent/10 transition-all duration-300"
               >
                 <Download size={18} />
                 Download CV
-              </a>
+              </motion.a>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.9 }}
+              transition={{ duration: 0.6, delay: 1.4 }}
               className="flex gap-4 justify-center lg:justify-start"
             >
               {[
@@ -97,37 +143,55 @@ const HeroSection = () => {
                 { icon: Mail, href: "mailto:sravanth6115@gmail.com", label: "Email" },
                 { icon: Phone, href: "tel:+917973556498", label: "Phone" },
               ].map(({ icon: Icon, href, label }) => (
-                <a
+                <motion.a
                   key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-lg border border-border text-muted-foreground hover:text-primary hover:border-primary transition-all hover:shadow-lg hover:shadow-primary/10"
+                  whileHover={{ scale: 1.1, boxShadow: "0 0 20px hsl(var(--primary) / 0.4)" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-3 rounded-lg border-2 border-primary/30 text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300"
                   aria-label={label}
                 >
                   <Icon size={20} />
-                </a>
+                </motion.a>
               ))}
             </motion.div>
           </div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
+            initial={{ opacity: 0, scale: 0.8, rotateY: -20 }}
+            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
             className="relative flex-shrink-0"
           >
             <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 animate-pulse-glow" />
-              <div className="absolute inset-2 rounded-full overflow-hidden border-2 border-primary/30">
+              <motion.div 
+                className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/30 to-accent/20 animate-pulse-glow"
+                animate={{ rotateZ: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              />
+              <motion.div 
+                className="absolute inset-2 rounded-full overflow-hidden border-2 border-primary/50"
+                whileHover={{ borderColor: "hsl(var(--primary))" }}
+              >
                 <img
                   src={PROFILE_IMG}
                   alt="Sai Sravanth Pentela"
                   className="w-full h-full object-cover"
                 />
-              </div>
-              <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-primary/20 animate-float" />
-              <div className="absolute -bottom-2 -left-6 w-6 h-6 rounded-full bg-primary/30 animate-float" style={{ animationDelay: "1.5s" }} />
+              </motion.div>
+              <motion.div 
+                className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-primary/40 animate-float"
+                animate={{ boxShadow: ["0 0 10px hsl(var(--primary))", "0 0 20px hsl(var(--primary))"] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
+              <motion.div 
+                className="absolute -bottom-2 -left-6 w-6 h-6 rounded-full bg-accent/40 animate-float" 
+                style={{ animationDelay: "1.5s" }}
+                animate={{ boxShadow: ["0 0 8px hsl(var(--accent))", "0 0 16px hsl(var(--accent))"] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
             </div>
           </motion.div>
         </div>
@@ -135,22 +199,24 @@ const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
+          transition={{ delay: 1.6 }}
           className="flex justify-center mt-16"
         >
-          <a href="#about" className="text-muted-foreground hover:text-primary transition-colors animate-bounce">
+          <motion.a 
+            href="#about" 
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="text-muted-foreground hover:text-primary transition-colors"
+          >
             <ArrowDown size={24} />
-          </a>
+          </motion.a>
         </motion.div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 py-4 border-t border-border bg-background/80 backdrop-blur-sm overflow-hidden">
+      <div className="absolute bottom-0 left-0 right-0 py-4 border-t border-primary/20 bg-background/80 backdrop-blur-sm overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...marqueeItems, ...marqueeItems].map((item, i) => (
-            <span key={i} className="mx-6 text-sm text-muted-foreground font-mono">
-              {item}
-              <span className="ml-6 text-primary/40">•</span>
-            </span>
+            <span key={i} className="mx-6 text-sm text-muted-foreground font-mono font-semibold">{item}</span>
           ))}
         </div>
       </div>

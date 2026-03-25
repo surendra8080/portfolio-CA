@@ -21,7 +21,7 @@ const AchievementsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
             Key <span className="gradient-text">Achievements</span>
           </h2>
         </motion.div>
@@ -38,7 +38,7 @@ const AchievementsSection = () => {
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                 <Trophy className="text-primary" size={22} />
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">{ach}</p>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">{ach}</p>
             </motion.div>
           ))}
         </div>

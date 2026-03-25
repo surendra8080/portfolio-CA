@@ -45,54 +45,57 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold">
-            About <span className="gradient-text">Me</span>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-2">
+            About <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Me</span>
           </h2>
         </motion.div>
 
-        {/* Name & contact info bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-12 p-6 rounded-xl border border-border bg-card"
-        >
-          <h3 className="text-xl font-bold text-center mb-4">
-            Sai Sravanth <span className="text-primary">Pentela</span>
-          </h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {contactLinks.map((c, i) => (
-              <a
-                key={i}
-                href={c.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                <c.icon size={16} className="text-primary" />
-                {c.label}
-              </a>
-            ))}
-          </div>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           {aboutCards.map((card, i) => (
             <motion.div
               key={card.title}
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
-              className="group p-6 rounded-xl border border-border bg-card hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5"
+              whileHover={{ y: -10, boxShadow: "0 0 30px hsl(var(--primary) / 0.2)" }}
+              className="group p-8 rounded-xl border border-border bg-card hover:border-primary/40 transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                <card.icon className="text-primary" size={24} />
+              <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mb-6 group-hover:from-primary/20 group-hover:to-accent/20 transition-colors">
+                <card.icon className="text-primary" size={32} />
               </div>
-              <h3 className="text-lg font-semibold mb-3">{card.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-primary">{card.title}</h3>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">{card.desc}</p>
             </motion.div>
           ))}
         </div>
+
+        {/* Name & contact info bar - moved to bottom */}
+        <motion.div
+          initial={{ opacity: 0, y: 20, scale: 0.95 }}
+          animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="mt-16 p-8 rounded-xl border border-primary/20 bg-card hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
+        >
+          <h3 className="text-3xl md:text-5xl font-black text-center mb-8">
+            Sai Sravanth <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Pentela</span>
+          </h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            {contactLinks.map((c, i) => (
+              <motion.a
+                key={i}
+                href={c.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05, color: "hsl(var(--primary))" }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center gap-2 text-base md:text-lg text-muted-foreground hover:text-primary transition-colors"
+              >
+                <c.icon size={20} className="text-primary" />
+                {c.label}
+              </motion.a>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

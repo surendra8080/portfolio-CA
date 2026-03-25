@@ -64,8 +64,8 @@ const ProjectsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold">
-            Featured <span className="gradient-text">Work</span>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-2">
+            Featured <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Work</span>
           </h2>
         </motion.div>
 
@@ -76,7 +76,8 @@ const ProjectsSection = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.12 }}
-              className="group relative rounded-xl border border-border bg-card overflow-hidden hover:border-primary/40 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 flex flex-col"
+              whileHover={{ y: -10, boxShadow: "0 0 40px hsl(var(--primary) / 0.25)" }}
+              className="group relative rounded-xl border border-border bg-card overflow-hidden hover:border-primary/40 transition-all duration-300 flex flex-col"
             >
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -93,28 +94,46 @@ const ProjectsSection = () => {
                 </span>
               </div>
 
-              <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
+              <div className="p-8 flex flex-col flex-1">
+                <h3 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   {project.title}
                 </h3>
-                <p className="text-sm text-muted-foreground mb-4 leading-relaxed flex-1">
+                <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed flex-1 font-medium">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-1.5 mb-4">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((t) => (
-                    <span key={t} className="px-2 py-0.5 text-[11px] rounded bg-secondary text-secondary-foreground font-mono">
+                    <motion.span 
+                      key={t} 
+                      whileHover={{ scale: 1.05 }}
+                      className="px-3 py-1.5 text-xs md:text-sm rounded-md bg-gradient-to-r from-primary/10 to-accent/10 text-primary font-semibold border border-primary/20 hover:border-primary/50 transition-all"
+                    >
                       {t}
-                    </span>
+                    </motion.span>
                   ))}
                 </div>
                 <div className="flex gap-4">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-                    <Github size={16} /> Code
-                  </a>
+                  <motion.a 
+                    href={project.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex items-center gap-2 text-base md:text-lg text-muted-foreground hover:text-primary transition-colors font-semibold"
+                  >
+                    <Github size={18} /> Code
+                  </motion.a>
                   {project.live && (
-                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-                      <ExternalLink size={16} /> Live Demo
-                    </a>
+                    <motion.a 
+                      href={project.live} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex items-center gap-2 text-base md:text-lg text-muted-foreground hover:text-primary transition-colors font-semibold"
+                    >
+                      <ExternalLink size={18} /> Live Demo
+                    </motion.a>
                   )}
                 </div>
               </div>
@@ -126,16 +145,18 @@ const ProjectsSection = () => {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.8 }}
-          className="text-center mt-10"
+          className="text-center mt-12"
         >
-          <a
+          <motion.a
             href="https://github.com/saisravanth6115?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-muted-foreground hover:text-primary hover:border-primary transition-all text-sm"
+            whileHover={{ scale: 1.05, boxShadow: "0 0 30px hsl(var(--primary) / 0.3)" }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg border-2 border-primary text-primary hover:bg-primary/10 transition-all text-base md:text-lg font-semibold"
           >
-            <Github size={16} /> View All Projects on GitHub
-          </a>
+            <Github size={20} /> View All Projects on GitHub
+          </motion.a>
         </motion.div>
       </div>
     </section>

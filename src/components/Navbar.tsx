@@ -34,7 +34,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-4">
-        <a href="#" className="text-xl font-bold gradient-text">
+        <a href="#" className="text-3xl md:text-4xl lg:text-5xl font-bold gradient-text">
           Sravanth
         </a>
 

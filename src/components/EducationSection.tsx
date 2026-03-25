@@ -73,7 +73,7 @@ const EducationSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
             Education & <span className="gradient-text">Experience</span>
           </h2>
         </motion.div>
@@ -85,7 +85,7 @@ const EducationSection = () => {
           transition={{ delay: 0.2 }}
           className="mb-16"
         >
-          <h3 className="text-xl font-semibold mb-8 text-primary flex items-center gap-2">
+          <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-primary flex items-center gap-2">
             <GraduationCap size={22} />
             Education
           </h3>
@@ -110,12 +110,12 @@ const EducationSection = () => {
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                            <h4 className="font-semibold text-sm">{item.title}</h4>
-                            <span className="text-xs font-mono text-primary whitespace-nowrap">{item.period}</span>
+                            <h4 className="font-semibold text-base md:text-lg">{item.title}</h4>
+                            <span className="text-sm font-mono text-primary whitespace-nowrap">{item.period}</span>
                           </div>
-                          <p className="text-xs text-muted-foreground mt-0.5">{item.institution}</p>
-                          <p className="text-sm font-medium text-primary mt-1">{item.detail}</p>
-                          <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{item.description}</p>
+                          <p className="text-sm text-muted-foreground mt-0.5">{item.institution}</p>
+                          <p className="text-base font-medium text-primary mt-1">{item.detail}</p>
+                          <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{item.description}</p>
                         </div>
                       </div>
                     </div>
@@ -132,7 +132,7 @@ const EducationSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <h3 className="text-xl font-semibold mb-8 text-primary flex items-center gap-2">
+          <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-primary flex items-center gap-2">
             <Award size={22} />
             Experience & Training
           </h3>

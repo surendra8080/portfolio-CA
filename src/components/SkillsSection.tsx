@@ -52,17 +52,17 @@ const ProgressBar = ({ name, level, delay }: { name: string; level: number; dela
   const inView = useInView(ref, { once: true });
 
   return (
-    <div ref={ref} className="mb-4">
-      <div className="flex justify-between mb-1.5">
-        <span className="text-sm font-medium">{name}</span>
-        <span className="text-xs font-mono text-primary">{level}%</span>
+    <div ref={ref} className="mb-6">
+      <div className="flex justify-between mb-2">
+        <span className="text-base md:text-lg font-semibold">{name}</span>
+        <span className="text-sm md:text-base font-mono text-primary font-semibold">{level}%</span>
       </div>
-      <div className="h-2 rounded-full bg-secondary overflow-hidden">
+      <div className="h-4 rounded-full bg-secondary/50 overflow-hidden border-2 border-primary/20">
         <motion.div
           initial={{ width: 0 }}
           animate={inView ? { width: `${level}%` } : { width: 0 }}
-          transition={{ duration: 1, delay, ease: "easeOut" }}
-          className="h-full rounded-full bg-gradient-to-r from-primary to-primary/60"
+          transition={{ duration: 1.2, delay, ease: "easeOut" }}
+          className="h-full rounded-full bg-gradient-to-r from-primary via-accent to-primary/80 shadow-lg shadow-primary/50"
         />
       </div>
     </div>
@@ -82,8 +82,8 @@ const SkillsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold">
-            Tech <span className="gradient-text">Stack</span>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-2">
+            Tech <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Stack</span>
           </h2>
         </motion.div>
 
@@ -94,9 +94,10 @@ const SkillsSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: catIdx * 0.15 }}
-              className="p-6 rounded-xl border border-border bg-card"
+              whileHover={{ y: -5, boxShadow: "0 0 30px hsl(var(--primary) / 0.2)" }}
+              className="p-8 rounded-xl border border-border bg-card hover:border-primary/40 transition-all duration-300"
             >
-              <h3 className="text-lg font-semibold mb-6 text-primary">{cat.title}</h3>
+              <h3 className="text-xl-large font-semibold mb-8 text-primary">{cat.title}</h3>
               {cat.skills!.map((skill, i) => (
                 <ProgressBar key={skill.name} name={skill.name} level={skill.level} delay={catIdx * 0.15 + i * 0.08} />
               ))}
@@ -108,10 +109,10 @@ const SkillsSection = () => {
               key={cat.title}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="p-6 rounded-xl border border-border bg-card"
+              whileHover={{ y: -5 }}
+              className="p-8 rounded-xl border border-border bg-card hover:border-primary/40 transition-all duration-300"
             >
-              <h3 className="text-lg font-semibold mb-6 text-primary">{cat.title}</h3>
+              <h3 className="text-xl-large font-semibold mb-8 text-primary">{cat.title}</h3>
               <div className="grid grid-cols-4 gap-4">
                 {cat.icons!.map((tool, i) => (
                   <motion.div
@@ -119,9 +120,11 @@ const SkillsSection = () => {
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={inView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.3, delay: 0.4 + i * 0.06 }}
-                    className="flex flex-col items-center gap-2 p-3 rounded-lg hover:bg-secondary/50 transition-colors group"
+                    whileHover={{ scale: 1.15, rotateZ: 5 }}
+                    className="flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-secondary/50 transition-colors group cursor-pointer"
                   >
-                    <img src={tool.img} alt={tool.name} className="w-10 h-10 group-hover:scale-110 transition-transform" loading="lazy" />
+                    <img src={tool.img} alt={tool.name} className="w-12 h-12 group-hover:drop-shadow-lg transition-all" loading="lazy" />
+                    <span className="text-xs md:text-sm text-muted-foreground text-center font-mediumroup-hover:scale-110 transition-transform" loading="lazy" />
                     <span className="text-xs text-muted-foreground text-center">{tool.name}</span>
                   </motion.div>
                 ))}
@@ -132,20 +135,19 @@ const SkillsSection = () => {
           {skillCategories.filter(c => c.tags).map((cat, catIdx) => (
             <motion.div
               key={cat.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.45 + catIdx * 0.1 }}
-              className="p-6 rounded-xl border border-border bg-card"
+              whileHover={{ y: -5 }}
+              className="p-8 rounded-xl border border-border bg-card hover:border-primary/40 transition-all duration-300"
             >
-              <h3 className="text-lg font-semibold mb-4 text-primary">{cat.title}</h3>
-              <div className="flex flex-wrap gap-3">
+              <h3 className="text-xl-large font-semibold mb-6 text-primary">{cat.title}</h3>
+              <div className="flex flex-wrap gap-4">
                 {cat.tags!.map((tag, i) => (
                   <motion.span
                     key={tag}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={inView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.3, delay: 0.5 + i * 0.05 }}
-                    className="px-4 py-2 rounded-lg bg-secondary text-secondary-foreground text-sm font-medium border border-border hover:border-primary/40 hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-default"
+                    whileHover={{ scale: 1.05, boxShadow: "0 0 20px hsl(var(--primary) / 0.3)" }}
+                    className="px-5 py-3 rounded-lg bg-gradient-to-r from-primary/10 to-accent/10 text-primary font-semibold text-base border border-primary/30 hover:border-primary/60 hover:bg-primary/20 transition-all duration-200 cursor-default"
                   >
                     {tag}
                   </motion.span>

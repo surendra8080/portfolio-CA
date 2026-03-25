@@ -23,10 +23,10 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Let's <span className="gradient-text">Connect</span>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6">
+            Let's <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Connect</span>
           </h2>
-          <p className="text-muted-foreground max-w-lg mx-auto">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-lg mx-auto leading-relaxed font-semibold">
             I'm always open to discussing new opportunities, exciting projects, or just having a chat about technology and data science!
           </p>
         </motion.div>
@@ -36,9 +36,9 @@ const ContactSection = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="space-y-4"
+            className="space-y-6"
           >
-            <h3 className="text-lg font-semibold mb-6">Get in Touch</h3>
+            <h3 className="text-3xl md:text-4xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Get in Touch</h3>
             {contacts.map((c, i) => (
               <motion.a
                 key={c.label}
@@ -48,14 +48,15 @@ const ContactSection = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.4, delay: 0.3 + i * 0.08 }}
-                className="group flex items-center gap-4 p-4 rounded-xl border border-border bg-card hover:border-primary/40 transition-all duration-200 hover:shadow-lg hover:shadow-primary/5"
+                whileHover={{ x: 10, boxShadow: "0 0 25px hsl(var(--primary) / 0.2)" }}
+                className="group flex items-center gap-4 p-6 rounded-xl border border-border bg-card hover:border-primary/40 transition-all duration-200"
               >
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <c.icon className="text-primary" size={18} />
+                <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center group-hover:from-primary/20 group-hover:to-accent/20 transition-colors flex-shrink-0">
+                  <c.icon className="text-primary" size={24} />
                 </div>
                 <div>
-                  <p className="text-xs text-muted-foreground">{c.label}</p>
-                  <p className="text-sm font-medium group-hover:text-primary transition-colors">{c.value}</p>
+                  <p className="text-xs md:text-sm text-muted-foreground font-semibold uppercase tracking-wide">{c.label}</p>
+                  <p className="text-base md:text-lg font-semibold group-hover:text-primary transition-colors">{c.value}</p>
                 </div>
               </motion.a>
             ))}
@@ -65,21 +66,28 @@ const ContactSection = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="p-8 rounded-xl border border-border bg-card flex flex-col items-center justify-center text-center"
+            whileHover={{ boxShadow: "0 0 40px hsl(var(--primary) / 0.2)" }}
+            className="p-10 rounded-xl border border-primary/20 bg-card hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center text-center"
           >
-            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-              <Send className="text-primary" size={28} />
-            </div>
-            <h3 className="text-xl font-semibold mb-3">Let's Build Something Together</h3>
-            <p className="text-sm text-muted-foreground mb-6 max-w-sm">
+            <motion.div 
+              className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mb-8"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            >
+              <Send className="text-primary" size={32} />
+            </motion.div>
+            <h3 className="text-2xl md:text-3xl font-semibold mb-4">Let's Build Something Together</h3>
+            <p className="text-lg text-muted-foreground mb-8 max-w-sm leading-relaxed">
               Feel free to reach out for collaboration, opportunities, or just a friendly conversation!
             </p>
-            <a
+            <motion.a
               href="mailto:sravanth6115@gmail.com"
-              className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-all hover:shadow-lg hover:shadow-primary/20"
+              whileHover={{ scale: 1.05, boxShadow: "0 0 30px hsl(var(--primary) / 0.4)" }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 rounded-lg bg-gradient-to-r from-primary to-primary/70 text-primary-foreground font-semibold text-lg hover:shadow-lg transition-all"
             >
               Send a Message
-            </a>
+            </motion.a>
           </motion.div>
         </div>
       </div>
