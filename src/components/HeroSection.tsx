@@ -153,7 +153,7 @@ const HeroSection = () => {
               className="flex gap-4 justify-center lg:justify-start"
             >
               {[
-                { icon: Github, href: "https://github.com/Surendra144964", label: "GitHub" },
+                { icon: Github, href: "https://github.com/surendra8080", label: "GitHub" },
                 { icon: Linkedin, href: "https://www.linkedin.com/in/surendra2005/", label: "LinkedIn" },
                 { icon: Mail, href: "mailto:surendrakolla89@gmail.com", label: "Email" },
                 { icon: Phone, href: "tel:+918885610186", label: "Phone" },

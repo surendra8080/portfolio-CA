@@ -18,6 +18,7 @@ const projects = [
     tech: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
     period: "Mar' 25 – Apr' 25",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=512&fit=crop",
+    github: "https://github.com/surendra8080/Visual-Analytics-of-Indian-Population-Census-Data-using-Pytho",
   },
   {
     title: "Data Cleaning and Visualization for HR",
@@ -25,6 +26,7 @@ const projects = [
     tech: ["Power BI", "Excel", "Python", "Pandas"],
     period: "Nov' 25 – Dec' 25",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=512&fit=crop",
+    live: "https://www.linkedin.com/posts/surendra2005_dataanalytics-powerbi-learningjourney-activity-7405925267505840129-Kd49?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEeu55cBBjNKIqtrm9YXvvuTlKS7rwIh3vY",
   },
 ];
 

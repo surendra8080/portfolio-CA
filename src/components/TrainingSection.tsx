@@ -4,27 +4,6 @@ import { Award, Cloud, Code } from "lucide-react";
 
 const experience = [
   {
-    icon: Award,
-    title: "Oracle Cloud Infrastructure 2025 Certified Data Science Professional",
-    org: "Oracle",
-    period: "2025",
-    description: "Successfully earned the Oracle Cloud Infrastructure Data Science Professional certification, gaining hands-on experience in designing and implementing data science solutions on cloud platforms. Developed skills in building, training, and deploying machine learning models, and utilizing data-driven insights to solve real-world business problems.",
-  },
-  {
-    icon: Code,
-    title: "Tata Data Visualisation Virtual Experience",
-    org: "Tata Consultancy Services (TCS)",
-    period: "Aug '25",
-    description: "Completed a comprehensive virtual experience program focused on data analysis and visualization techniques. Gained practical knowledge in creating dashboards and reports using tools like Power BI, enabling effective communication of insights.",
-  },
-  {
-    icon: Cloud,
-    title: "Google Cloud Program Participant",
-    org: "Google Arcade",
-    period: "May '25 – Dec '25",
-    description: "Completed intensive training on GCP services, cloud architecture, IAM security, and scalable infrastructure design. Implemented and deployed cloud-based solutions on GCP.",
-  },
-  {
     icon: Code,
     title: "Data Structures and Algorithms",
     org: "Self-Study",
