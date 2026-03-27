@@ -12,7 +12,7 @@ const navItems = [
   { label: "Contact", href: "#contact" },
 ];
 
-const CV_URL = "https://drive.google.com/uc?export=download&id=1DDlYUs3BNLoQMUVMos0yk73jJVqVryWV";
+const CV_URL = "https://drive.google.com/file/d/1vfvODutkvvj1MU6fykautgkxKf3tLL3A/view?usp=sharing";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
