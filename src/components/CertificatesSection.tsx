@@ -6,7 +6,7 @@ const certificates = [
   {
     name: "Oracle Cloud Infrastructure AI Foundations Associate",
     org: "Oracle",
-    year: "2025",
+    year: "2026",
     description: "Certified in Oracle Cloud Infrastructure with expertise in AI foundations, cloud architecture, and intelligent solutions.",
     link: "https://drive.google.com/file/d/1NoNT2h6qq5RpA3bjd4kvKglcMpCFqWqH/view?usp=sharing",
     driveLink: "https://drive.google.com/file/d/1NoNT2h6qq5RpA3bjd4kvKglcMpCFqWqH/view?usp=sharing",
@@ -16,7 +16,7 @@ const certificates = [
   {
     name: "Oracle Database Certification",
     org: "Oracle",
-    year: "2025",
+    year: "2026",
     description: "Professional certification in Oracle Database covering database design, administration, and optimization techniques.",
     link: "https://drive.google.com/file/d/1w2gpCU4I7LTz_yoAxEl5AfnbzNC5PbGt/view?usp=sharing",
     driveLink: "https://drive.google.com/file/d/1w2gpCU4I7LTz_yoAxEl5AfnbzNC5PbGt/view?usp=sharing",
@@ -26,7 +26,7 @@ const certificates = [
   {
     name: "Hackathon Winner",
     org: "Tech Community",
-    year: "2025",
+    year: "2026",
     description: "Successfully participated and won hackathon competition, demonstrating innovation and technical excellence in problem-solving.",
     link: "https://drive.google.com/file/d/1E9UNCWGJ3GbtYnFJPZlkOWLze3RmOmUm/view?usp=sharing",
     driveLink: "https://drive.google.com/file/d/1E9UNCWGJ3GbtYnFJPZlkOWLze3RmOmUm/view?usp=sharing",
