@@ -45,7 +45,7 @@ const certificates = [
   },
 ];
 
-const years = ["All", "2025"];
+const years = ["All","2026", "2025"];
 
 const CertificatesSection = () => {
   const ref = useRef(null);
