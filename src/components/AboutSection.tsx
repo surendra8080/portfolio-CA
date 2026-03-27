@@ -26,10 +26,10 @@ const aboutCards = [
 ];
 
 const contactLinks = [
-  { icon: Mail, label: "sravanth6115@gmail.com", href: "mailto:sravanth6115@gmail.com" },
-  { icon: Phone, label: "+91 7973556498", href: "tel:+917973556498" },
-  { icon: Linkedin, label: "saisravanth-pentela", href: "https://www.linkedin.com/in/saisravanth-pentela" },
-  { icon: Github, label: "saisravanth6115", href: "https://github.com/saisravanth6115" },
+  { icon: Mail, label: "surendrakolla89@gmail.com", href: "mailto:surendrakolla89@gmail.com"},
+  { icon: Phone, label: "+91 8885610186", href: "tel:+918885610186" },
+  { icon: Linkedin, label: "Kolla Surendra Kumar", href: "https://www.linkedin.com/in/surendra2005/" },
+  { icon: Github, label: "surendra8080", href: "https://github.com/surendra8080" },
 ];
 
 const AboutSection = () => {
