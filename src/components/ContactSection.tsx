@@ -81,7 +81,7 @@ const ContactSection = () => {
               Feel free to reach out for collaboration, opportunities, or just a friendly conversation!
             </p>
             <motion.a
-              href="mailto:sravanth6115@gmail.com"
+              href="mailto:surendrakolla89@gmail.com"
               whileHover={{ scale: 1.05, boxShadow: "0 0 30px hsl(var(--primary) / 0.4)" }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 rounded-lg bg-gradient-to-r from-primary to-primary/70 text-primary-foreground font-semibold text-lg hover:shadow-lg transition-all"
