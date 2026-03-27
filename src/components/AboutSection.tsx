@@ -6,7 +6,7 @@ const aboutCards = [
   {
     icon: User,
     title: "Who I Am",
-    desc: "I am Sravanth, an aspiring Data Analyst, Business Analyst, and AI Web Developer with a strong academic background in Computer Science. I am passionate about leveraging data and technology to solve real-world problems and support data-driven decision-making.",
+    desc: "I am Surendra, an aspiring Data Analyst, Business Analyst, and AI Web Developer with a strong academic background in Computer Science. I am passionate about leveraging data and technology to solve real-world problems and support data-driven decision-making.",
   },
   {
     icon: Rocket,
@@ -77,7 +77,7 @@ const AboutSection = () => {
           className="mt-16 p-8 rounded-xl border border-primary/20 bg-card hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
         >
           <h3 className="text-3xl md:text-5xl font-black text-center mb-8">
-            Sai Sravanth <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Pentela</span>
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Surendra</span>
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
             {contactLinks.map((c, i) => (

@@ -47,25 +47,21 @@ const skillCategories = [
   },
 ];
 
-const ProgressBar = ({ name, level, delay }: { name: string; level: number; delay: number }) => {
+const SkillTag = ({ name, delay }: { name: string; delay: number }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
 
   return (
-    <div ref={ref} className="mb-6">
-      <div className="flex justify-between mb-2">
-        <span className="text-base md:text-lg font-semibold">{name}</span>
-        <span className="text-sm md:text-base font-mono text-primary font-semibold">{level}%</span>
-      </div>
-      <div className="h-4 rounded-full bg-secondary/50 overflow-hidden border-2 border-primary/20">
-        <motion.div
-          initial={{ width: 0 }}
-          animate={inView ? { width: `${level}%` } : { width: 0 }}
-          transition={{ duration: 1.2, delay, ease: "easeOut" }}
-          className="h-full rounded-full bg-gradient-to-r from-primary via-accent to-primary/80 shadow-lg shadow-primary/50"
-        />
-      </div>
-    </div>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={inView ? { opacity: 1, scale: 1 } : {}}
+      transition={{ duration: 0.4, delay }}
+      whileHover={{ scale: 1.05, boxShadow: "0 0 20px hsl(var(--primary) / 0.3)" }}
+      className="px-4 py-2 rounded-lg bg-gradient-to-r from-primary/10 to-accent/10 text-primary font-semibold text-sm md:text-base border border-primary/30 hover:border-primary/60 hover:bg-primary/20 transition-all duration-200 cursor-default"
+    >
+      {name}
+    </motion.div>
   );
 };
 
@@ -83,7 +79,7 @@ const SkillsSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-2">
-            Tech <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Stack</span>
+            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Skills</span>
           </h2>
         </motion.div>
 
@@ -98,9 +94,11 @@ const SkillsSection = () => {
               className="p-8 rounded-xl border border-border bg-card hover:border-primary/40 transition-all duration-300"
             >
               <h3 className="text-xl-large font-semibold mb-8 text-primary">{cat.title}</h3>
-              {cat.skills!.map((skill, i) => (
-                <ProgressBar key={skill.name} name={skill.name} level={skill.level} delay={catIdx * 0.15 + i * 0.08} />
-              ))}
+              <div className="flex flex-wrap gap-3">
+                {cat.skills!.map((skill, i) => (
+                  <SkillTag key={skill.name} name={skill.name} delay={catIdx * 0.15 + i * 0.08} />
+                ))}
+              </div>
             </motion.div>
           ))}
 

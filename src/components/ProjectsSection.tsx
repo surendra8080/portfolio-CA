@@ -1,53 +1,30 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Github } from "lucide-react";
-import projectComics from "@/assets/project-comics.jpg";
-import projectElection from "@/assets/project-election.jpg";
-import projectCarPredict from "@/assets/project-carpredict.jpg";
-import projectChat from "@/assets/project-chat.jpg";
-import projectMonitor from "@/assets/project-monitor.jpg";
+import { Github, ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "Used Car Price Prediction",
-    description: "ML regression model using 4,340 records to predict vehicle selling prices. Performed data preprocessing, feature engineering, and implemented Random Forest regression evaluated with R², MAE, and RMSE.",
-    tech: ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib"],
-    github: "https://github.com/saisravanth6115/predictive-analysis",
-    image: projectCarPredict,
-    period: "Jun '25 - Dec '26",
+    title: "Smart-Audit AI",
+    description: "AI-powered call auditing for Battery Smart that analyzes every call, flags revenue leakage, and triggers faster coaching for support teams.",
+    tech: ["React 18", "DistilBERT", "BART-MNLI", "Deepgram", "AWS Amplify"],
+    period: "Battery Smart Hackathon Finalist",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f70d504f0?w=800&h=512&fit=crop",
+    github: "https://github.com/Gundavenkatasai/hacksmart",
+    live: "https://hacksmart-rho.vercel.app/",
   },
   {
-    title: "LPU Live - Real-Time Chat",
-    description: "Secure messaging platform with JWT auth, WebSocket bidirectional communication, live presence tracking, and multi-device session sync.",
-    tech: ["React", "Node.js", "Express.js", "MongoDB", "Socket.IO", "WebRTC"],
-    github: "https://github.com/saisravanth6115/lpulive",
-    live: "https://lpulivetimepass.vercel.app/",
-    image: projectChat,
-    period: "Aug '25 - Nov '25",
+    title: "Visual Analytics of Indian Population Census Data Using Python",
+    description: "Performed data cleaning and preprocessing on India's Census dataset to ensure consistency and accuracy. Conducted exploratory data analysis and created multiple visualizations to identify trends in population distribution, gender ratio, urban–rural patterns, and demographic correlations.",
+    tech: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
+    period: "Mar' 25 – Apr' 25",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=512&fit=crop",
   },
   {
-    title: "Process Monitoring Dashboard",
-    description: "Desktop app monitoring CPU, RAM, disk, network usage in real time with graphical visualization and high-resource process identification.",
-    tech: ["Python", "Psutil", "Tkinter", "Matplotlib"],
-    github: "https://github.com/saisravanth6115/Real-time-process-monitoring-dashboard",
-    image: projectMonitor,
-    period: "May '25 - Aug '25",
-  },
-  {
-    title: "AI Custom Comics Generator",
-    description: "AI-based system that converts text prompts into complete comic stories. Takes user input, breaks it into panels with scene descriptions and dialogues, generates images, adds speech bubbles, and combines them into a final comic strip.",
-    tech: ["Python", "AI/ML", "Image Generation", "NLP", "Comic Layout"],
-    github: "https://github.com/saisravanth6115/AI-Custom-Comics-Generator",
-    image: projectComics,
-    period: "2025",
-  },
-  {
-    title: "India Election 2024 Dashboard",
-    description: "Interactive Power BI dashboard analyzing India Election 2024 data — party-wise seats, vote share, state-wise results, and regional strength visualization using charts and maps.",
-    tech: ["Power BI", "DAX", "Excel/CSV", "Data Cleaning", "Visualization"],
-    github: "https://github.com/saisravanth6115/india-election-2024-powerbi-dashboard",
-    image: projectElection,
-    period: "2024",
+    title: "Data Cleaning and Visualization for HR",
+    description: "Performed data cleaning, transformation, and validation on HR datasets to ensure data accuracy and consistency. Developed interactive dashboards to analyze workforce trends, employee performance, and department-level insights for data-driven decision making.",
+    tech: ["Power BI", "Excel", "Python", "Pandas"],
+    period: "Nov' 25 – Dec' 25",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=512&fit=crop",
   },
 ];
 
@@ -65,11 +42,11 @@ const ProjectsSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-2">
-            Featured <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Work</span>
+            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Projects</span>
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, i) => (
             <motion.div
               key={project.title}
@@ -79,7 +56,7 @@ const ProjectsSection = () => {
               whileHover={{ y: -10, boxShadow: "0 0 40px hsl(var(--primary) / 0.25)" }}
               className="group relative rounded-xl border border-border bg-card overflow-hidden hover:border-primary/40 transition-all duration-300 flex flex-col"
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-32 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -112,52 +89,38 @@ const ProjectsSection = () => {
                     </motion.span>
                   ))}
                 </div>
-                <div className="flex gap-4">
-                  <motion.a 
-                    href={project.github} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 text-base md:text-lg text-muted-foreground hover:text-primary transition-colors font-semibold"
-                  >
-                    <Github size={18} /> Code
-                  </motion.a>
-                  {project.live && (
-                    <motion.a 
-                      href={project.live} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-2 text-base md:text-lg text-muted-foreground hover:text-primary transition-colors font-semibold"
-                    >
-                      <ExternalLink size={18} /> Live Demo
-                    </motion.a>
-                  )}
-                </div>
+                {(project.github || project.live) && (
+                  <div className="flex gap-4">
+                    {project.github && (
+                      <motion.a 
+                        href={project.github} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex items-center gap-2 text-base md:text-lg text-muted-foreground hover:text-primary transition-colors font-semibold"
+                      >
+                        <Github size={18} /> Code
+                      </motion.a>
+                    )}
+                    {project.live && (
+                      <motion.a 
+                        href={project.live} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex items-center gap-2 text-base md:text-lg text-muted-foreground hover:text-primary transition-colors font-semibold"
+                      >
+                        <ExternalLink size={18} /> Live Demo
+                      </motion.a>
+                    )}
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.8 }}
-          className="text-center mt-12"
-        >
-          <motion.a
-            href="https://github.com/saisravanth6115?tab=repositories"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05, boxShadow: "0 0 30px hsl(var(--primary) / 0.3)" }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg border-2 border-primary text-primary hover:bg-primary/10 transition-all text-base md:text-lg font-semibold"
-          >
-            <Github size={20} /> View All Projects on GitHub
-          </motion.a>
-        </motion.div>
       </div>
     </section>
   );

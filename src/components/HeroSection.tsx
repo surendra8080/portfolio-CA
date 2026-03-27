@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail, Phone, Download } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const PROFILE_IMG = "https://drive.google.com/thumbnail?id=1YDzx6oV6A4M2rQdFADRCe1yHrMEmxsRN&sz=w800";
+const PROFILE_IMG = "/image/Profile.jpg";
 const CV_URL = "https://drive.google.com/uc?export=download&id=1DDlYUs3BNLoQMUVMos0yk73jJVqVryWV";
 
 const marqueeItems = ["Python", "Data Science", "Machine Learning", "AI", "React", "Node.js", "SQL", "Power BI", "Cloud Computing", "Analytics"];
@@ -62,19 +62,10 @@ const HeroSection = () => {
             >
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2 h-20 md:h-24 lg:h-32 flex items-center">
                 <TypedText 
-                  text="Sai Sravanth" 
+                  text="Surendra Kumar Kolla" 
                   className="text-foreground"
                 />
               </h1>
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 3.5 }}
-              >
-                <span className="text-4xl md:text-6xl lg:text-7xl font-bold gradient-text">
-                  Pentela
-                </span>
-              </motion.div>
             </motion.div>
 
             <motion.h2
