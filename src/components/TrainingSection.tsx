@@ -8,7 +8,7 @@ const experience = [
     title: "Data Structures and Algorithms",
     org: "Self-Study",
     period: "Jun '25 - Jul '25",
-    description: "Built strong foundations in complexity analysis, recursion, and OOP problem solving with arrays, trees, graphs, and dynamic programming.",
+    description: "Completed a 6-week hands-on training program at Lovely Professional University focused on mastering advanced data structures and their real-world applications. The program emphasized problem-solving, efficient algorithm design, and practical implementation using C++.",
   },
 ];
 
