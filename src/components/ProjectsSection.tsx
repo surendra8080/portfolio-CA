@@ -8,7 +8,7 @@ const projects = [
     description: "AI-powered call auditing for Battery Smart that analyzes every call, flags revenue leakage, and triggers faster coaching for support teams.",
     tech: ["React 18", "DistilBERT", "BART-MNLI", "Deepgram", "AWS Amplify"],
     period: "Battery Smart Hackathon Finalist",
-    image: "public/image/smartauditai.jpeg",
+    image: "/image/smartauditai.jpeg",
     github: "https://github.com/Gundavenkatasai/hacksmart",
     live: "https://hacksmart-rho.vercel.app/",
   },
