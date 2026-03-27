@@ -34,10 +34,10 @@ const certificates = [
     image: "/image/Hackathon.jpeg",
   },
   {
-    name: "Cloud Computing NPTEL Certification",
+    name: "Advanced Computer Networks NPTEL Certification",
     org: "NPTEL",
     year: "2025",
-    description: "NPTEL certification covering cloud architecture, virtualization, distributed computing, and modern cloud service deployment.",
+    description: "Successfully completed the Advanced Computer Networks course offered by NPTEL, funded by the Ministry of Education, Government of India.NPTEL certification covering cloud architecture, virtualization, distributed computing, and modern cloud service deployment.",
     link: "https://drive.google.com/file/d/14qPneCJjcrlGJr93tYkidT0CsD8NKDEK/view?usp=sharing",
     driveLink: "https://drive.google.com/file/d/14qPneCJjcrlGJr93tYkidT0CsD8NKDEK/view?usp=sharing",
     icon: "https://img.icons8.com/color/48/cloud.png",
