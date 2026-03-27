@@ -7,10 +7,10 @@ const ContactSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   const contacts = [
-    { icon: Mail, label: "Email", value: "sravanth6115@gmail.com", href: "mailto:sravanth6115@gmail.com" },
-    { icon: Phone, label: "Phone", value: "+91 7973556498", href: "tel:+917973556498" },
-    { icon: Github, label: "GitHub", value: "saisravanth6115", href: "https://github.com/saisravanth6115" },
-    { icon: Linkedin, label: "LinkedIn", value: "saisravanth-pentela", href: "https://www.linkedin.com/in/saisravanth-pentela" },
+    { icon: Mail, label: "surendrakolla89@gmail.com", href: "mailto:surendrakolla89@gmail.com"},
+  { icon: Phone, label: "+91 8885610186", href: "tel:+918885610186" },
+  { icon: Linkedin, label: "Kolla Surendra Kumar", href: "https://www.linkedin.com/in/surendra2005/" },
+  { icon: Github, label: "surendra8080", href: "https://github.com/surendra8080" },
     { icon: MapPin, label: "Location", value: "Andhra Pradesh, India", href: "https://maps.app.goo.gl/AP" },
   ];
 

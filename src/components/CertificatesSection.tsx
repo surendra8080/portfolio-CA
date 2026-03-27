@@ -40,7 +40,7 @@ const certificates = [
     link: "https://internalapp.nptel.ac.in/B2C/exam_form/candidate_login/candidate_scores.php?courseid=noc25-cs107",
     driveLink: "https://drive.google.com/file/d/1w2gpCU4I7LTz_yoAxEl5AfnbzNC5PbGt/view",
     icon: "https://img.icons8.com/color/48/cloud.png",
-    image: "/image/NPTEL.pdf",
+    image: "/image/NPTEL.png",
   },
 ];
 
