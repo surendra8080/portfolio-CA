@@ -55,7 +55,7 @@ const ContactSection = () => {
                   <c.icon className="text-primary" size={24} />
                 </div>
                 <div>
-                  <p className="text-xs md:text-sm text-muted-foreground font-semibold uppercase tracking-wide">{c.label}</p>
+                  <p className="text-xs md:text-sm text-muted-foreground font-semibold lowercase tracking-wide">{c.label}</p>
                   <p className="text-base md:text-lg font-semibold group-hover:text-primary transition-colors">{c.value}</p>
                 </div>
               </motion.a>
