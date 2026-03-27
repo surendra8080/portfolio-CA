@@ -15,14 +15,7 @@ const skillCategories = [
   },
   {
     title: "Development & Frameworks",
-    skills: [
-      { name: "React", level: 80 },
-      { name: "Node.js & Express", level: 78 },
-      { name: "Java", level: 75 },
-      { name: "C++", level: 75 },
-      { name: "SQL", level: 85 },
-      { name: "MongoDB", level: 72 },
-    ],
+    tags: ["DSA", "Operating Systems", "DBMS", "Computer Networks", "OOP"],
   },
   {
     title: "Tools & Platforms",
@@ -40,10 +33,6 @@ const skillCategories = [
   {
     title: "Soft Skills",
     tags: ["Problem-Solving", "Analytical Thinking", "Team Collaboration", "Adaptability", "Communication"],
-  },
-  {
-    title: "Core Concepts",
-    tags: ["DSA", "Operating Systems", "DBMS", "Computer Networks", "OOP"],
   },
 ];
 
