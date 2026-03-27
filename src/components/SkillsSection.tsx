@@ -14,7 +14,7 @@ const skillCategories = [
     ],
   },
   {
-    title: "Development & Frameworks",
+    title: "Core Components",
     tags: ["DSA", "Operating Systems", "DBMS", "Computer Networks", "OOP"],
   },
   {
