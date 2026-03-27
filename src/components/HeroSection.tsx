@@ -3,7 +3,7 @@ import { ArrowDown, Github, Linkedin, Mail, Phone, Download } from "lucide-react
 import { useState, useEffect } from "react";
 
 const PROFILE_IMG = "/image/Profile.jpg";
-const CV_URL = "https://drive.google.com/uc?export=download&id=1DDlYUs3BNLoQMUVMos0yk73jJVqVryWV";
+const CV_URL = "https://drive.google.com/file/d/1vfvODutkvvj1MU6fykautgkxKf3tLL3A/view?usp=sharing";
 
 const marqueeItems = ["Python", "Data Science", "Machine Learning", "AI", "React", "Node.js", "SQL", "Power BI", "Cloud Computing", "Analytics"];
 
@@ -129,10 +129,10 @@ const HeroSection = () => {
               className="flex gap-4 justify-center lg:justify-start"
             >
               {[
-                { icon: Github, href: "https://github.com/saisravanth6115", label: "GitHub" },
-                { icon: Linkedin, href: "https://www.linkedin.com/in/saisravanth-pentela", label: "LinkedIn" },
-                { icon: Mail, href: "mailto:sravanth6115@gmail.com", label: "Email" },
-                { icon: Phone, href: "tel:+917973556498", label: "Phone" },
+                { icon: Github, href: "https://github.com/Surendra144964", label: "GitHub" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/surendra2005/", label: "LinkedIn" },
+                { icon: Mail, href: "mailto:surendrakolla89@gmail.com", label: "Email" },
+                { icon: Phone, href: "tel:+918885610186", label: "Phone" },
               ].map(({ icon: Icon, href, label }) => (
                 <motion.a
                   key={label}
