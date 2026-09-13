@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail, Phone, Download } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const PROFILE_IMG = "/image/Profile.jpg";
+const PROFILE_IMG = "/image/profile.png";
 const CV_URL = "https://drive.google.com/file/d/1vfvODutkvvj1MU6fykautgkxKf3tLL3A/view?usp=sharing";
 
 const marqueeItems = [
