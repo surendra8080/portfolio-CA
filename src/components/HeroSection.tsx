@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail, Phone, Download } from "lucide-react";
 import { useState, useEffect } from "react";
+import profileImg from "@/assets/profile.png";
 
-const PROFILE_IMG = "/image/profile.png";
+const PROFILE_IMG = profileImg || "/image/profile.png";
 const CV_URL = "https://drive.google.com/file/d/1vfvODutkvvj1MU6fykautgkxKf3tLL3A/view?usp=sharing";
 
 const marqueeItems = [
@@ -17,7 +18,7 @@ const TypedText = ({ text, className = "" }: { text: string; className?: string 
   useEffect(() => {
     if (currentIndex < text.length) {
       const timer = setTimeout(() => {
-        setDisplayedText((prev) => prev + text[currentIndex]);
+        setDisplayedText(text.slice(0, currentIndex + 1));
         setCurrentIndex((prev) => prev + 1);
       }, 50);
       return () => clearTimeout(timer);
@@ -185,17 +186,23 @@ const HeroSection = () => {
 
               <motion.div
                 className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/30 to-accent/20 animate-pulse-glow"
-                animate={{ rotateZ: 360 }}
+                animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               />
 
               <motion.div
-                className="absolute inset-2 rounded-full overflow-hidden border-2 border-primary/50"
+                className="absolute inset-2 rounded-full overflow-hidden border-2 border-primary/50 shadow-2xl bg-secondary/30"
               >
                 <img
                   src={PROFILE_IMG}
                   alt="Surendra Kumar Kolla"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-[center_20%]"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (target.src !== "/image/profile.png") {
+                      target.src = "/image/profile.png";
+                    }
+                  }}
                 />
               </motion.div>
 

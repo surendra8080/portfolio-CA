@@ -111,8 +111,7 @@ const SkillsSection = () => {
                     className="flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-secondary/50 transition-colors group cursor-pointer"
                   >
                     <img src={tool.img} alt={tool.name} className="w-12 h-12 group-hover:drop-shadow-lg transition-all" loading="lazy" />
-                    <span className="text-xs md:text-sm text-muted-foreground text-center font-mediumroup-hover:scale-110 transition-transform" loading="lazy" />
-                    <span className="text-xs text-muted-foreground text-center">{tool.name}</span>
+                    <span className="text-xs text-muted-foreground text-center group-hover:scale-110 transition-transform">{tool.name}</span>
                   </motion.div>
                 ))}
               </div>
